@@ -3,10 +3,36 @@
 [ext_resource path="res://demo/ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://demo/player.tscn" type="PackedScene" id=2]
 
-[node name="Demo" type="Node2D"]
+[node name="Demo" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 400 )
 
 [node name="Ground" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 512 )
+
+[node name="GUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+
+[node name="Label" type="Label" parent="GUI/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Spacebar to jump"
+align = 1
+
+[node name="Label2" type="Label" parent="GUI/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1024.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "down arrow to stomp"
+align = 1
